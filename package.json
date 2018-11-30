@@ -1,0 +1,25 @@
+{
+  "name": "nodecrudapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitoi/nodeCRUDApp.git"
+  },
+  "author": "Cristinel Mitoi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mitoi/nodeCRUDApp/issues"
+  },
+  "homepage": "https://github.com/mitoi/nodeCRUDApp#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.14"
+  }
+}
