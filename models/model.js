@@ -6,8 +6,10 @@ class Model {
         this.Model = this.db.model(this.name, this.schema);
     }
 
-    create(data){
-        
+    async create(data){
+        let model = new this.Model(data);
+        let result = await model.save();
+        return result;
     }
 
 }

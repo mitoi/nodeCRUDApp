@@ -4,7 +4,7 @@ class Database{
     constructor(dbName, url, port, username, password){
         this.url = url || '127.0.0.1';
         this.port = port || '27017';
-        this.name = dbName || 'test';
+        this.dbName = dbName || 'test';
         this.username = username;
         this.password = password;
     }
@@ -15,6 +15,7 @@ class Database{
             authString = this.username + ":" + this.password+"@";
         }
         let connectionString = "mongodb://" + authString + this.url + ":" + this.port + "/" + this.dbName;
+        console.log(connectionString)
         let db = await mongoose.createConnection(connectionString);
         mongoose.Promise = global.Promise;
         db.on('error', (err) => {throw(err)});
