@@ -11,6 +11,7 @@
         price: {type: Number, required: true},
     }
     let productModel = new Model (connection, 'products', productSchema)
-    let newProduct = await productModel.create({name: 'Sony Xperia z3+', price: 0});
+    let newProduct = await productModel.create([{name: 'Sony Xperia z3+', price: 1000},
+                                                {name:'Samsung s6 edge', price: 120}]);
     console.log(newProduct)
 })();
