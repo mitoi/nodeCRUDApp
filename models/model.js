@@ -8,10 +8,11 @@ class Model {
 
     async create(data){
         let result = [];
-        let createData = typeof data == "object" ? [data] : data;
+        let createData = data.constructor === Object ? [data] : data;
+        console.log(createData)
         if(createData.length && createData.length > 0){
             for(let cdata of createData){
-                let model = new this.Model(data);
+                let model = new this.Model(cdata);
                 result.push(await model.save());
             }
         }
@@ -30,7 +31,6 @@ class Model {
     async delete (conditions){
         return await this.Model.deleteMany(conditions);
     }
-
 }
 
 module.exports = Model;
